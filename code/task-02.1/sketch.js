@@ -3,38 +3,28 @@ function setup() {
 }
 
 function draw() {
-  //noLoop();
-  frameRate(3);
-  background(100);
-  stroke('red');
-
+  frameRate(1);
+  background('white');
+  stroke('black');
+  strokeWeight(random(20));
 
   beginShape();
-  for (let fun = 0; fun < 100; fun += 2) {
-    let fun = random(-100, 100);
-    let a = fun;
-    let b = fun * 20;
+  for (let angle = 0; angle < 360; angle += 15){
+    const radius = random(10, 500 );
+    const x = radius * cos(Math.PI / 180 * angle);
+    const y = radius * sin(Math.PI / 180 * angle);
 
- triangle(200 + a, 200 + b, 300 + a, 200 + b, 250 + a, 300 + b)
-
-  }
-endShape();
-
+    if (angle < 180) {
+      fill(random(121,255), random(121,255), random(121,255));
+        curveVertex(x + random(400) ,y + random(400));
+      
+    }   else if (angle > 180) {
+      fill(random(120), random(120), random(120));
+      curveVertex(x + random(400),y + random(400));
+      
+    }
+      
+endShape(CLOSE);
+    
 }
-
-
- /* beginShape();
-  for (let space = -100; space < 400; space += 20) {
-    const spass = random(40, 80);
-    const x = spass + space;
-    const y = spass + space;
-
-vertex(x + 200 , y + 200);
-vertex(x + 100 , y + 100);
-vertex(x + 50 , y + 50);
-vertex(x + 250 , y + 250);
-
 }
-
-  endShape(CLOSE);
-*/
