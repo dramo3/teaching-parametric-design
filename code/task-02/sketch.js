@@ -85,12 +85,14 @@ for(let x = -10; x <= sketchWidth; x += triSizeA * 4,5) {
       20 + x,
       40 + y
     )
-    if (x <= 400 ){
+    if (x < 400){
       fill(55,55,55);
      } /* else if (x > 340 && x<400){
      noStroke();
     } */
   }
+
+  // warum wird das erste Dreieck nicht gefüllt?
   
 let triSizeB = 10;
 for(let x = -8; x <= sketchWidth; x += triSizeB * 4,5) {
@@ -102,19 +104,14 @@ for(let x = -8; x <= sketchWidth; x += triSizeB * 4,5) {
       40 + y,
       20 + x,
       40 + y
-    )
-    /* if (x > 0 ){
-      noStroke();
-     }  else if (x > 340 && x<400){
-     noStroke();
-    } */
+    );
+    
   }
   
   
   
 }
 }
-
 
 noLoop();
 fill('white');
